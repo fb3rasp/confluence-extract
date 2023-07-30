@@ -1,8 +1,8 @@
 const axios = require("axios")
 const btoa = require("btoa")
 const createCsvWriter = require("csv-writer").createObjectCsvWriter
-const pageKeywords = require("./pageKeywords")
-const pageService = require("./pageService")
+const pageKeywords = require("./content/pageKeywords")
+const pageService = require("./content/pageService")
 const natural = require("natural")
 const striptags = require("striptags")
 
