@@ -62,6 +62,7 @@ const loadData = async (instance, labels) => {
       // await all_tfidf.addDocument(
       //   page.title + " " + striptags(await page.content)
       // )
+      console.log(page.title)
       await title_tfidf.addDocument(page.title)
 
       console.log(page.id)
@@ -91,6 +92,16 @@ const loadData = async (instance, labels) => {
       term: item.term,
       tfidf: item.tfidf,
     }))
+  )
+
+  console.log(
+    await title_tfidf
+      .listTerms(1 /* in document 0 */)
+      .splice(0, 10)
+      .map((item) => ({
+        term: item.term,
+        tfidf: item.tfidf,
+      }))
   )
 
   // console.log(title_tfidf.idf("safe"))
